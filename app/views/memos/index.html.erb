@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My tweet</h1>
+
+<table>
+  
+ <body>
+   
+  <ul class="flex-container">
+  
+    <li><%= link_to '投稿', new_memo_path %></li>
+</ul>
+  
+</body>
+  <tbody>
+    <% @memos.each do |memo| %>
+      <tr>
+        <td><%= memo.body %></td>
+        <td><%= link_to 'Show', memo %></td>
+        <td><%= link_to 'Edit', edit_memo_path(memo) %></td>
+        <td><%= link_to 'Destroy', memo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <div class="memos-index-item">
+        
+      </div>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
